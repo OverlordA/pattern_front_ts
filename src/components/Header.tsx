@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 
-const Header: React.FC = () => {
-    return <div>Header</div>;
+type HeaderProps = {
+    title: string;
 };
-export default Header;
+
+export const Header: FunctionComponent<HeaderProps> = ({ title }) => {
+    return <div>{title}</div>;
+};
