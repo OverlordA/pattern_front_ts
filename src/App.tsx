@@ -8,8 +8,8 @@ const App: React.FC = () => {
     const user: LoginUser = { login: '', password: '' };
 
     return (
-        <div className="App">
-            <Header title="Header title" />
+        <div className='App'>
+            <Header title='Header title' />
             <HomePage />
         </div>
     );
