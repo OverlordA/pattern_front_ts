@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import { HomePage, Login, Profile, About } from './pages';
 import { Header } from './components';
 import { LoginUser } from './model';

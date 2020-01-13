@@ -1,5 +1,5 @@
 import React from 'react';
-import './Login.css';
+import './Login.scss';
 import { Field, Form, Formik } from 'formik';
 
 interface LoginForm {

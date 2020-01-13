@@ -1,3 +1,5 @@
+$greenBorder:#008833;
+
 .login-container {
     display: flex;
     flex-direction: column;
@@ -7,7 +9,7 @@
     padding: 40px;
 }
 .login-form {
-    border: 1px solid #008833;
+    border: 1px solid $greenBorder;
     border-radius: 3px;
     display: flex;
     flex-direction: column;
