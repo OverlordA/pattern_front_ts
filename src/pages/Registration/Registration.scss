@@ -1,0 +1,22 @@
+$greenBorder: #008833;
+.reg-container {
+ display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 40px;
+}
+.reg-form{
+  border: 1px solid $greenBorder;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 20%;
+  padding: 10px;
+}
+.reg-form-element {
+  margin: 3px;
+  width: 80%;
+}
