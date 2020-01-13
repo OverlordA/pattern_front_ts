@@ -1,4 +1,5 @@
 $greenBorder:#008833;
+$linkColor: rgba(255, 174, 217, 0.87);
 
 .login-container {
     display: flex;
@@ -20,5 +21,8 @@ $greenBorder:#008833;
 .login-form-element {
     margin: 3px;
     width: 80%;
-
+}
+.login-link {
+    font-size: 14px;
+    color: $linkColor;
 }

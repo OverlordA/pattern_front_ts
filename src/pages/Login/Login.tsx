@@ -1,6 +1,7 @@
 import React from 'react';
 import './Login.scss';
 import { Field, Form, Formik } from 'formik';
+import {Link} from "react-router-dom";
 
 interface LoginForm {
     login: string;
@@ -27,7 +28,7 @@ const Login: React.FC = () => {
                         makeLogin(values);
                         actions.setSubmitting(false);
                     }}
-                    render={({formickBug, onSubmit}: any) => (
+                    render={({ formickBug, onSubmit }: any) => (
                         <Form>
                             <Field
                                 name='login'
@@ -35,7 +36,10 @@ const Login: React.FC = () => {
                                     <div>
                                         <input
                                             className='login-form-element'
-                                            type='text' {...field} placeholder='Login' />
+                                            type='text'
+                                            {...field}
+                                            placeholder='Login'
+                                        />
                                         {meta.touched && meta.error && meta.error}
                                     </div>
                                 )}
@@ -46,7 +50,10 @@ const Login: React.FC = () => {
                                     <div>
                                         <input
                                             className='login-form-element'
-                                            type='password' {...field} placeholder='Password ' />
+                                            type='password'
+                                            {...field}
+                                            placeholder='Password '
+                                        />
                                         {meta.touched && meta.error && meta.error}
                                     </div>
                                 )}
@@ -57,6 +64,7 @@ const Login: React.FC = () => {
                         </Form>
                     )}
                 />
+                <Link className='login-link' to={'/reg'}> Register account </Link>
             </div>
         </div>
     );
