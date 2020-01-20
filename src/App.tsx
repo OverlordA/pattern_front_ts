@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.scss';
-import { HomePage, Login, Profile, About, Registration} from './pages';
 import { Header } from './components';
 import { LoginUser } from './model';
-import { Route, BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Routes from './routing/routes';
 
 const App: React.FC = () => {
     const user: LoginUser = { login: '', password: '' };
@@ -12,11 +12,7 @@ const App: React.FC = () => {
         <Router>
             <div className='App'>
                 <Header title='' />
-                <Route exact path='/' component={HomePage} />
-                <Route exact path='/login' component={Login} />
-                <Route exact path='/reg' component={Registration} />
-                <Route exact path='/profile' component={Profile} />
-                <Route exact path='/about' component={About} />
+                <Routes />
             </div>
         </Router>
     );
