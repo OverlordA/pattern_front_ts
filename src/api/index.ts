@@ -9,5 +9,9 @@ const registrationUser = async (username: string, email: string, password: strin
     const result = await AxiosInstance.post(`${baseUrl}/auth/registration`, { username, password, email });
     return result.data;
 };
+const loginUser = async (username: string, password: string): Promise<string> => {
+    const result = await AxiosInstance.post(`${baseUrl}/auth/login`, { username, password });
+    return result.data.token;
+};
 
-export { getAllUsers, registrationUser };
+export { getAllUsers, registrationUser, loginUser };

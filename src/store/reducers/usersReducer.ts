@@ -11,7 +11,7 @@ const initialState: UserStoreState = {
 function onUserLoginSuccess(action: LoginActions) {
     return {
         token: action.payload,
-        name: action.payload,
+        name: '',
     };
 }
 
