@@ -1,7 +1,7 @@
 import { UserStoreState } from '../StoreState';
 import ActionTypes from '../actions/ActionTypes';
 import ActionTypeKeys from '../actions/ActionTypeKeys';
-import LoginActions from '../actions/auth/LoginActions';
+import LoginActions from '../actions/auth/actionTypes/LoginActions';
 
 const initialState: UserStoreState = {
     name: '',

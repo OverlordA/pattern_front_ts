@@ -2,6 +2,8 @@ import React from 'react';
 
 import './Registration.scss';
 import { Field, Form, Formik } from 'formik';
+import { useDispatch } from 'react-redux';
+import { registerUser } from '../../store/actions/auth/authActions';
 
 interface RegFormInitialValue {
     login: string;
@@ -13,6 +15,8 @@ interface RegFormInitialValue {
 
 const Registration: React.FC = () => {
 
+    const dispatch = useDispatch();
+
     const regFormInitValue: RegFormInitialValue = {
         login: '',
         password: '',
@@ -22,6 +26,7 @@ const Registration: React.FC = () => {
 
     const makeRegistration = (values: object) => {
         console.log('make registration ', values);
+       dispatch(registerUser(values));
     };
 
     return (

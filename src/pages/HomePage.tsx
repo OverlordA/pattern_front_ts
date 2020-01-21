@@ -1,21 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { getAllUsers, registrationUser } from '../api';
-import {Link} from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const HomePage: React.FC = () => {
     const [usersResponse, setUsersResponse] = useState();
-    const [registerResponse, setRegisterResponse] = useState();
 
     const getUsers = async () => {
         const users = await getAllUsers();
         console.log(users);
         setUsersResponse(JSON.stringify(users));
     };
-    const createUser = async () => {
-        const result = await registrationUser('test', 'tes@gmail.com', '123');
-        console.log(result);
-        setRegisterResponse(JSON.stringify(result));
-    };
+    const createUser = async () => {};
 
     return (
         <div className={'home-container'}>
@@ -27,8 +22,7 @@ const HomePage: React.FC = () => {
                 <button onClick={getUsers}>Get users </button>
             </div>
             <div className={'response-container'}>
-                <div className={'response'} >{usersResponse}</div>
-                <div className={'response'} >{registerResponse}</div>
+                <div className={'response'}>{usersResponse}</div>
             </div>
         </div>
     );
