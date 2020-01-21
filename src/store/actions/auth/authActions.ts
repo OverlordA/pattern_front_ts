@@ -6,6 +6,8 @@ import { Action, ActionCreator, Dispatch } from 'redux';
 import { ThunkAction } from 'redux-thunk';
 import RegistrationActions from './actionTypes/RegistrationActions';
 import RegistrationPayload from './payloadTypes/RegistrationPayload';
+import _ from 'lodash';
+import { findAllInRenderedTree } from 'react-dom/test-utils';
 
 export const loginRequest: ActionCreator<ThunkAction<Promise<Action>, LoginActions, void, any>> = (
     login: string,
@@ -24,12 +26,18 @@ export const registerUser: ActionCreator<ThunkAction<Promise<Action>, Registrati
     user: RegistrationPayload,
 ) => {
     return async (dispatch: Dispatch<RegistrationActions>): Promise<Action> => {
-        const result = await registrationUser(user);
-        console.log(' result ', result);
-        return dispatch({
-            type: keys.REGISTRATION_USER,
-            payload: { login: '', email: '' },
-        });
+        try {
+            const registeredUser = await registrationUser(user);
+            return dispatch({
+                type: keys.REGISTRATION_USER,
+                payload: { login: registeredUser.email, email: registeredUser.email },
+            });
+        } catch (error) {
+            return dispatch({
+                type: keys.REGISTRATION_USER,
+                payload: { login: '', email: '' },
+            });
+        }
     };
 };
 
