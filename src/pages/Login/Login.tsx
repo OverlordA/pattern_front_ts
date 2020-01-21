@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Login.scss';
 import { Field, Form, Formik } from 'formik';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { initStore } from '../../store/actions/init/initActions';
 
 interface LoginForm {
     login: string;
@@ -10,11 +11,15 @@ interface LoginForm {
 }
 
 const Login: React.FC = () => {
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(initStore('test text '));
+    });
+
     const initialValLoginForm: LoginForm = {
         login: '',
         password: '',
     };
-    const dispatch = useDispatch();
 
     const makeLogin = async (values: LoginForm) => {
         console.log('Make login is called', values);
