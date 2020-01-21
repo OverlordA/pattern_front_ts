@@ -6,6 +6,8 @@ export default interface StoreState {
 export interface UserStoreState {
     name: string;
     token: string;
+    login: string;
+    email: string;
 }
 export interface InitialStoreState {
     thunkTest: string;

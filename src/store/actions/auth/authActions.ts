@@ -8,6 +8,7 @@ import RegistrationActions from './actionTypes/RegistrationActions';
 import RegistrationPayload from './payloadTypes/RegistrationPayload';
 import _ from 'lodash';
 import { findAllInRenderedTree } from 'react-dom/test-utils';
+import RegistrationActionsFail from './actionTypes/RegistrationActionsFail';
 
 export const loginRequest: ActionCreator<ThunkAction<Promise<Action>, LoginActions, void, any>> = (
     login: string,
@@ -25,7 +26,7 @@ export const loginRequest: ActionCreator<ThunkAction<Promise<Action>, LoginActio
 export const registerUser: ActionCreator<ThunkAction<Promise<Action>, RegistrationActions, void, any>> = (
     user: RegistrationPayload,
 ) => {
-    return async (dispatch: Dispatch<RegistrationActions>): Promise<Action> => {
+    return async (dispatch: Dispatch<any>): Promise<Action> => {
         try {
             const registeredUser = await registrationUser(user);
             return dispatch({
@@ -34,8 +35,8 @@ export const registerUser: ActionCreator<ThunkAction<Promise<Action>, Registrati
             });
         } catch (error) {
             return dispatch({
-                type: keys.REGISTRATION_USER,
-                payload: { login: '', email: '' },
+                type: keys.REGISTRATION_USER_FAIL,
+                payload: { error },
             });
         }
     };
