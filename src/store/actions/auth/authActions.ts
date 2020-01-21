@@ -7,15 +7,6 @@ import { ThunkAction } from 'redux-thunk';
 import RegistrationActions from './actionTypes/RegistrationActions';
 import RegistrationPayload from './payloadTypes/RegistrationPayload';
 
-// export const loginRequest = async (login: string, password: string): Promise<LoginActions> => {
-//     // history.push(sitesPath);
-//     const token: string = await loginUser(login, password);
-//     return {
-//         type: keys.LOGIN_USER,
-//         payload: token,
-//     };
-// };
-
 export const loginRequest: ActionCreator<ThunkAction<Promise<Action>, LoginActions, void, any>> = (
     login: string,
     password: string,

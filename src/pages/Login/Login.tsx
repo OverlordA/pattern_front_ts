@@ -4,6 +4,7 @@ import { Field, Form, Formik } from 'formik';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { initStore } from '../../store/actions/init/initActions';
+import { loginRequest } from '../../store/actions/auth/authActions';
 
 interface LoginForm {
     login: string;
@@ -24,8 +25,7 @@ const Login: React.FC = () => {
     const makeLogin = async (values: LoginForm) => {
         console.log('Make login is called', values);
         // login, password
-        dispatch({ type: 'LOGIN_USER', payload: { username:values.login, password: values.password }
-        } );
+        dispatch(loginRequest(values.login, values.password));
     };
 
     return (
