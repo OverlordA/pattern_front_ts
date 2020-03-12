@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import './header.scss';
-import { Search } from '../index';
+import { Search } from '../../index';
 
 type HeaderProps = {
     title: string;

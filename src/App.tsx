@@ -4,6 +4,7 @@ import { Header } from './components';
 import { LoginUser } from './model';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Routes from './routing/routes';
+import TopMenu from './components/layout/TopMenu/TopMenu';
 
 const App: React.FC = () => {
     const user: LoginUser = { login: '', password: '' };
@@ -12,6 +13,7 @@ const App: React.FC = () => {
         <Router>
             <div className='App'>
                 <Header title='Title' />
+                <TopMenu />
                 <Routes />
             </div>
         </Router>
