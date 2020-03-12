@@ -11,7 +11,7 @@ const App: React.FC = () => {
     return (
         <Router>
             <div className='App'>
-                <Header title='' />
+                <Header title='Title' />
                 <Routes />
             </div>
         </Router>
