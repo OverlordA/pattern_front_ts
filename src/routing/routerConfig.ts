@@ -1,11 +1,11 @@
-import { About, HomePage, Login, Profile, Registration } from '../pages';
+import { About, Home, Login, Profile, Registration } from '../pages';
 import { about, login, profile, registr, root } from './paths';
 
 const routes = [
     {
         exact: true,
         path: root,
-        component: HomePage,
+        component: Home,
         key: 'root',
     },
     {

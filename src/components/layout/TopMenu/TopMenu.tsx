@@ -1,12 +1,11 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import TopMenuItem from './TopMenuItem/TopMenuItem';
+import pagesLink from './pagesLink';
 
-const menu = ['Home', 'Categories', 'Politics', 'Business', 'Health', 'Design', 'Sport', 'Contact'];
-
-const TopMenu = () => {
+const TopMenu: FunctionComponent = () => {
     return (
         <div className='top-menu-container'>
-            {menu && menu.map(item => <TopMenuItem key={`menu-item-${item}`} item={item} />)}
+            {pagesLink && pagesLink.map(item => <TopMenuItem key={`menu-item-${item.path}`} {...item} />)}
         </div>
     );
 };
